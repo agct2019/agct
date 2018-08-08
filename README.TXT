@@ -3,10 +3,9 @@ This is the Code and Dataset tarball for AGCT and paper
 "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions"
 by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
-This tarball contains 4 parts:
+Pre-compiled JAR File: https://github.com/agct2018/agct/releases/download/v1.0/agct.jar
 
-1* AGCT jarfile
-  jar file of AGCT classes: agct.jar
+This tarball contains the following parts:
 
 * Quickstart pdf presentation to run agct.jar: AGCT_kickstart.pdf
 
