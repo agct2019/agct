@@ -4,6 +4,9 @@ This is the Code and Dataset tarball for AGCT and paper
 by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
 Pre-compiled JAR File: https://github.com/agct2018/agct/releases/download/v1.0/agct.jar
+Demo Movie (Youtube):
+  https://youtu.be/cQgMaZ1fLlk
+  https://youtu.be/tY-5TeBRq7Y
 
 This tarball contains the following parts:
 
