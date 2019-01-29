@@ -22,7 +22,7 @@ java -d64 -Xmx8000m -jar agct.jar  (change jar file name here please)
 * To run AGCT for yourself and replicate the scenario, check file AGCT_kickstart_vesion2.pdf 
 
 * To compile the java files and generate the agct.jar file, (i) go in the Source repository and run ./compile_all.sh (compiles all java files), then (ii) run ./makejar.sh, which will generate the jar file and place it at the right place to run agct.jar as above.
-** You must compile with Java Development Kit 1.8 https://docs.oracle.com/javase/7/docs/webnotes/install/.    
+** You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
 
 Thank you.
 
