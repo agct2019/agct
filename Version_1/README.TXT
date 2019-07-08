@@ -23,7 +23,7 @@ This tarball contains the following parts:
   (some operations involving matrices will also be 4 to 100 times faster, which may also be good to try various additional algorithms)
 
 * Example Scenario folder
-  Scenario recovering the paper’s results for YCC: NICTA_AGCT_Spellman_CDC28_6178.txt
+  Scenario recovering the paper’s results for YCC: NICTA_AGCT_Spellman_CDC28_6178.txt (removed due to size limit)
   Equivalent scenario on the 1000 genes subset: NICTA_AGCT_Spellman_CDC28_1000.txt
 
 * Source file, containing all Java classes needed to compile and run AGCT

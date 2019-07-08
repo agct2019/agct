@@ -18,9 +18,9 @@ java -d64 -Xmx8000m -jar AGCT2alpha.jar
 ** To run the provided scenario file, you must edit Line 11 in /Version_2/Scenarii/Test.txt to give a correct path.
 ** To test the provided scenario, simply click on the “Scenario” folder in AGCT (“load and execute scenario”) and select the scenario file in its folder. The scenario will then run automatically until its end (in this case, the computation of the non-linear manifold). 
 Please note about scenarios in general:
- (*) The scenario in AGCT_Vesion2 is recorded automatically upon start. To create a scenario file, the user need only stop recording by clicking on the scenario button (third button on scenario bar) and then save the scenario. You must compute at least one clustering before saving a scenario file. Otherwise, it will result in an incomplete scenario file.
+ (*) Unlike Version 1, the scenario in AGCT_Vesion2 is recorded automatically upon start. To create a scenario file, the user need only stop recording by clicking on the scenario button (third button on scenario bar) and then save the scenario. You must compute at least one clustering before saving a scenario file. Otherwise, it will result in an incomplete scenario file.
  (*) Please always stop the recording before loading/saving any scenario files.
- (*) Clusterings are not saved in the scenario file. Please recompute all clusterings after replaying the scenario file.
+ (*) To limit the size of the file, clusterings are no longer saved in the scenario file. Please recompute all clusterings after replaying the scenario file.
 
 * To run AGCT for yourself and replicate the scenario, check file AGCT_kickstart_vesion2.pdf.
 Hint: The top right icon blinks when there is computation going on.
