@@ -35,6 +35,12 @@ To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must
 ## Building
 You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
 
+## License
+
+See the [LICENSE](../LICENSE) file for details
+
+---
+
 Thank you.
 
 
