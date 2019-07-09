@@ -8,7 +8,7 @@ AGCT_Modification_Method_F|0
 AGCT_Modification_Method_S|1
 AGCT_Modification_Method_W|1
 AGCT_Modification_Method_N|1
-Load|/*CHANGE_PATH_HERE*/Yeast_Tu/Data/Test_570.txt
+Load|/*CHANGE_PATH_HERE*/Version_2/Datasets/Test_570.txt
 AGCT_Modification_Number_Of_Wavelet_Stamps|256
 JAGCTSelectionPane_Method_F|1
 JAGCTSelectionPane_Validate|
