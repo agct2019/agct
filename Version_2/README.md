@@ -1,9 +1,9 @@
 ﻿# AGCT: A Geometric Clustering Tool
-This is the Code and Dataset tarball for AGCT_vesion2 and paper  "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
+This is the Code and Dataset tarball for AGCT_version2 and paper  "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
 ## Content
 This directory contains the following parts:
-* Quickstart pdf presentation explaining the main steps when using AGCT: AGCT_kickstart_vesion2.pdf  
+* Quickstart pdf presentation explaining the main steps when using AGCT: AGCT_kickstart_version2.pdf
 * AGCT paper supplementary information, in the parent directory AGCT_paper_supplementary_information  
 * Datasets - Data files of the Yeast Cell Cycle (YCC) and the Yeast Metabolic Cycle (YMC): Yeast_6178.txt (Spellman at al), Yeast_9335.txt (Tu et al), Yeast_3565.txt (periodic genes form Tu et al). GEO tag file: Yeast.txt 
   - A small dataset (Test_570.txt) for testing and trying out additional algorithms is also provided (e.g. to see that the manifold construction is robust). 
@@ -27,10 +27,10 @@ Sentinels are genes/probes a priori verified as biologically important and whose
 AGCT allows saving previously recorded computation to a file, called a *scenario file*. Loading a scenario file will restore the comptation state (algorithms and parameters used) from when the scenario was created. To load a scenario file, simply click on the folder icon of the scenario bar (“load and execute scenario”) and select the scenario file. The scenario will then run automatically until its end (in this case, the computation of the non-linear manifold).
 
 Please note:
- * Unlike Version 1, the scenario in AGCT_Vesion2 is recorded automatically upon start. To create a scenario file, the user need only stop recording (third button on scenario bar) and then save the scenario. You must **compute at least one clustering** before saving a scenario file. Otherwise, it will result in an incomplete scenario file.
+ * Unlike Version 1, the scenario in Version 2 is recorded automatically upon start. To create a scenario file, the user need only stop recording (third button on scenario bar) and then save the scenario. You must **compute at least one clustering** before saving a scenario file. Otherwise, it will result in an incomplete scenario file.
  * Please always **stop recording** (third button on scenario bar) before loading/saving any scenario files.
  * To limit the size of the file, clusterings are no longer saved in the scenario file. Please **recompute any clusterings** after replaying the scenario file.
-To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the scenario, please check the file AGCT_kickstart_vesion2.pdf.
+To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the scenario, please check the file AGCT_kickstart_version2.pdf.
 
 ## Building
 You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
