@@ -1,5 +1,5 @@
 ﻿# AGCT: A Geometric Clustering Tool
-This is the Code and Dataset tarball for AGCT_version2 and paper  "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
+This is the Code and Dataset for AGCT and paper  "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
 ## Content
 Two different versions of the same program are provided. You should use **version 2**. See its readme for more details.
