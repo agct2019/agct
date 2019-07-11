@@ -32,6 +32,9 @@ Please note:
  * To limit the size of the file, clusterings are no longer saved in the scenario file. Please **recompute any clusterings** after replaying the scenario file.
 To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the scenario, please check the file AGCT_kickstart_version2.pdf.
 
+### Using the clustering result visualization frame
+The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings. See the '-Y' option in the help on clusterings on clustering commands.
+
 ## Building
 You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
 
