@@ -56,6 +56,6 @@ java -d64 -Xmx8000m -jar agct.jar
    files), then (ii) run ./makejar.sh, which will generate the jar
    file and place it at the right place to run agct.jar as above.
 ** You must compile with Java Development Kit 1.6 https://docs.oracle.com/javase/7/docs/webnotes/install/.
-   The program does NOT work in Java 1.8 or above (untested in Java 1.7).
+   The program does NOT work in Java 1.7 or above.
 
 Thank you.
