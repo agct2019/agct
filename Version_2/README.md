@@ -4,9 +4,9 @@ This is the Code and Dataset tarball for AGCT_version2 and paper  "AGCT: A Geome
 ## Content
 This directory contains the following parts:
 * Quickstart pdf presentation explaining the main steps when using AGCT: AGCT_kickstart_version2.pdf
-* AGCT paper supplementary information, in the parent directory AGCT_paper_supplementary_information  
-* Datasets - Data files of the Yeast Cell Cycle (YCC) and the Yeast Metabolic Cycle (YMC): Yeast_6178.txt (Spellman at al), Yeast_9335.txt (Tu et al), Yeast_3565.txt (periodic genes form Tu et al). GEO tag file: Yeast.txt 
-  - A small dataset (Test_570.txt) for testing and trying out additional algorithms is also provided (e.g. to see that the manifold construction is robust). 
+* AGCT paper supplementary information, in the parent directory AGCT_paper_supplementary_information. This pdf provides background knowledge for the algorithms used and explains the features of AGCT.
+* Datasets - Data files of the Yeast Cell Cycle (YCC) and the Yeast Metabolic Cycle (YMC): Yeast_6178.txt (Spellman at al), Yeast_9335.txt (Tu et al), Yeast_3565.txt (periodic genes form Tu et al). GEO tag file: Yeast.txt
+  - A small dataset (Test_570.txt) for testing and trying out additional algorithms is also provided (e.g. to see that the manifold construction is robust).
 * Sentinels - The sentinels folder includes groups of sentinels (probes that are known to be significantly correlated) for the Yeast Metabolic Cycle  (Yeast_9335.txt) and the Yeast Cell Cycle (Yeast_6178.txt).
 * Scenarii - An example scenario for the small test dataset is provided.
 * AGCT2alpha - The Java source files
@@ -30,13 +30,14 @@ Please note:
  * Unlike Version 1, the scenario in Version 2 is recorded automatically upon start. To create a scenario file, the user need only stop recording (third button on scenario bar) and then save the scenario. You must **compute at least one clustering** before saving a scenario file. Otherwise, it will result in an incomplete scenario file.
  * Please always **stop recording** (third button on scenario bar) before loading/saving any scenario files.
  * To limit the size of the file, clusterings are no longer saved in the scenario file. Please **recompute any clusterings** after replaying the scenario file.
-To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the scenario, please check the file AGCT_kickstart_version2.pdf.
+
+To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the provided scenario, please check the file AGCT_kickstart_version2.pdf for details.
 
 ### Using the clustering result visualization frame
-The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings. See the `-Y` option in the help on clustering commands.
+The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-Y` option in the help on clustering commands.
 
 ## Building
-You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
+You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 ## License
 
@@ -45,6 +46,3 @@ See the [LICENSE](../LICENSE) file for details
 ---
 
 Thank you.
-
-
-
