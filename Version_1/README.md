@@ -1,6 +1,5 @@
-# AGCT: A Geometric Clustering Tool
-
-This is the Code and Dataset tarball for AGCT and paper  "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
+# A Geometric Clustering Tool (AGCT)
+This is the Code and Dataset tarball for AGCT and paper  "A Geometric Clustering Tool (AGCT) to robustly unravel the inner cluster structures of time-series gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
 **The version does NOT work with Java 7 or newer.**
 
@@ -14,7 +13,7 @@ This directory contains the following parts:
 * Source - Directory containing all Java classes needed to compile and run AGCT
 
 ## Getting Started
-Download the pre-compiled JAR file [agct.jar](https://github.com/agct2018/agct/releases/download/v1.0/agct.jar). To run AGCT, we strongly suggest using a 64-bit JVM with sufficient memory:
+Download the pre-compiled JAR file [agct.jar](https://github.com/agct2019/agct/releases/download/v1.0/agct.jar). To run AGCT, we strongly suggest using a 64-bit JVM with sufficient memory:
 ```
 java -d64 -Xmx8000m -jar agct.jar
 ```
@@ -27,10 +26,12 @@ Please note:
  - When creating a scenario file, please start the recording (third button on scenario bar) **before** loading any datasets.
 
 
-To run the provided toy scenario file /Version_1/Scenarii/NICTA_AGCT_Spellman_CDC28_1000.txt, you must first edit the line 1 to give the correct path. The scenario ends after the computation of the manifold.
+To run the provided toy scenario file /Version_1/Scenarii/NICTA_AGCT_Spellman_CDC28_1000.txt, you must first edit line 1 to give the correct path. The scenario ends after the computation of the manifold.
 
 ### Using the clustering result visualization frame
 The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-Y` option in the help on clustering commands.
+
+Some graphs take a while to compute. Please be patient.
 
 ## Building
 To compile the Java files and generate the agct.jar file,

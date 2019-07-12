@@ -1,5 +1,5 @@
-﻿# AGCT: A Geometric Clustering Tool
-This is the Code and Dataset tarball for AGCT_version2 and paper  "AGCT: A Geometric Clustering Tool for robustly unravelling the inner cluster structures of gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
+﻿# A Geometric Clustering Tool (AGCT)
+This is the Code and Dataset tarball for AGCT_version2 and paper  "A Geometric Clustering Tool (AGCT) to robustly unravel the inner cluster structures of time-series gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
 ## Content
 This directory contains the following parts:
@@ -12,7 +12,7 @@ This directory contains the following parts:
 * AGCT2alpha - The Java source files
 
 ## Getting Started
-Download the pre-compiled JAR file [AGCT2alpha.jar](https://github.com/agct2018/agct/releases/download/v2.0/AGCT2alpha.jar). To run AGCT, we strongly suggest using a 64-bit JVM with sufficient memory:
+Download the pre-compiled JAR file [AGCT2alpha.jar](https://github.com/agct2019/agct/releases/download/v2.0/AGCT2alpha.jar). To run AGCT, we strongly suggest using a 64-bit JVM with sufficient memory:
 ```
 java -d64 -Xmx8000m -jar AGCT2alpha.jar
 ```
@@ -35,6 +35,8 @@ To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must
 
 ### Using the clustering result visualization frame
 The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-Y` option in the help on clustering commands.
+
+Some graphs take a while to compute. Please be patient.
 
 ## Building
 You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
