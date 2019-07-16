@@ -34,7 +34,7 @@ Please note:
 To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the provided scenario, please check the file AGCT_kickstart_version2.pdf for details.
 
 ### Using the clustering result visualization frame
-The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-Y` option in the help on clustering commands.
+The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-L` option in the help on clustering commands.
 
 Some graphs take a while to compute. Please be patient.
 

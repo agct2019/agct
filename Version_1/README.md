@@ -29,7 +29,7 @@ Please note:
 To run the provided toy scenario file /Version_1/Scenarii/NICTA_AGCT_Spellman_CDC28_1000.txt, you must first edit line 1 to give the correct path. The scenario ends after the computation of the manifold.
 
 ### Using the clustering result visualization frame
-The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-Y` option in the help on clustering commands.
+The clustering result visualization frame shows the results for different clusterings. For it to show anything useful, you have to create multiple clusterings of the same kind. See the `-L` option in the help on clustering commands.
 
 Some graphs take a while to compute. Please be patient.
 
