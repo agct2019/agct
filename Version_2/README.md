@@ -29,7 +29,7 @@ AGCT allows saving previously recorded computation to a file, called a *scenario
 Please note:
  * Unlike Version 1, the scenario in Version 2 is recorded automatically upon start. To create a scenario file, the user need only stop recording (third button on scenario bar) and then save the scenario. You must **compute at least one clustering** before saving a scenario file. Otherwise, it will result in an incomplete scenario file.
  * Please always **stop recording** (third button on scenario bar) before loading/saving any scenario files.
- * To limit the size of the file, clusterings are no longer saved in the scenario file. Please **recompute any clusterings** after replaying the scenario file.
+ * Clusterings are no longer saved in the scenario file. Please **recompute any clusterings** after replaying the scenario file. Be sure to note down the clustering commands used.
 
 To run the provided scenario file /Version_2/Scenarii/Test_570scen.txt, you must edit Line 11 to give the correct path. However, we instead suggest to manually run the small dataset and, if desired, recreate the scenario file on the user's personal computer (AGCT will then automatically generate the right path). To replicate the provided scenario, please check the file AGCT_kickstart_version2.pdf for details.
 
