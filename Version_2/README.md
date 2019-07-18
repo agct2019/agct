@@ -39,6 +39,8 @@ The clustering result visualization frame shows the results for different cluste
 Some graphs take a while to compute. Please be patient.
 
 ## Building
+Open the Eclipse project in /Version_2/AGCT2alpha. There will be unresolved imports, but the program should compile and run nevertheless.
+
 You must compile with Java Development Kit 1.8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 ## License
