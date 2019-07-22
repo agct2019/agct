@@ -1,5 +1,5 @@
 ﻿# A Geometric Clustering Tool (AGCT)
-This is the Code and Dataset for AGCT and paper  "A Geometric Clustering Tool (AGCT) to robustly unravel the inner cluster structures of time-series gene expressions" by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai, C. Heimhofer and H. Kitano
+This is the Code and Dataset for AGCT and paper  "A Geometric Clustering Tool (AGCT) to robustly unravel the inner cluster structures of time-series gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
 
 ## Content
 Two different versions of the same program are provided. Below you can find the major differences between version 1 and version 2. You probably want to use version 2.
