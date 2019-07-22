@@ -1,5 +1,5 @@
 # A Geometric Clustering Tool (AGCT)
-This is the Code and Dataset tarball for AGCT and paper  "A Geometric Clustering Tool (AGCT) to robustly unravel the inner cluster structures of time-series gene expressions" by by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai and H. Kitano
+This is the Code and Dataset tarball for AGCT and paper  "A Geometric Clustering Tool (AGCT) to robustly unravel the inner cluster structures of time-series gene expressions" by R. Nock, N. Polouliakh, K. Oka, F. Nielsen, K. Shibanai, C. Heimhofer and H. Kitano
 
 **The version does NOT work with Java 7 or newer.**
 
