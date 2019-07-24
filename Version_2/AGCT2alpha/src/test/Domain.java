@@ -1423,6 +1423,27 @@ public class Domain implements Debuggable {
         cc.end();
     }
 
+    /**
+     * Raw Coordinatesに基づく
+     */
+    public void computeGeneFeaturesRawCoordinates() {
+        if (AGCT.MYDEBUG) {
+            AGCT.debug("Domain.computeGeneFeaturesRawCoordinates()");
+        }
+
+        ControlProcess.assertTrue("filtersProcessed");
+        
+        for (int i = 0; i < selectedGenes.size(); i++) {
+            for (int j = 0, index = 0; j < _ligands.size(); j++) {
+                if (getLigands().get(j).isChecked()) {
+                	// the activation values are actually the coordinates.
+                    selectedGenes.get(i).finalCoordinates[index] = selectedGenes.get(i).getRawCoordinate(index).clone();
+                    index++;
+                }
+            }
+        }
+    }
+
     public void finishComputeGeneFeatures() {
         // while (!Feature.featuresSelected);
 
@@ -1462,6 +1483,8 @@ public class Domain implements Debuggable {
             computeGeneFeaturesSlopes();
         } else if ((AGCT.Method_F >= 1) && (AGCT.Method_F <= 10)) {
             computeGeneFeaturesWavelets();
+        } else if (AGCT.Method_F == 11) {
+        	computeGeneFeaturesRawCoordinates();
         } else {
             Matrix.perror("Method selected to compute features does not exist !");
         }
@@ -1477,6 +1500,7 @@ public class Domain implements Debuggable {
         if ((AGCT.Method_FS > 0)
                 && (AGCT.Max_Number_Of_Features < Util_Feature
                 .getNumberOfFeaturesBeforeSelection(getLigands(), times))) {
+        	System.err.println("--- Running feature selection ---\n");
             if (AGCT.Max_Number_Of_Features < 0) {
                 if (AGCT.DoDebug) {
                     System.out.println("Fixing max number of features to "
@@ -1486,6 +1510,7 @@ public class Domain implements Debuggable {
             }
             Util_Feature.featureSelection(this);
         } else {
+        	System.err.println("--- Not running feature selection ---\n");
             Util_Feature.noFeatureSelection(this);
         }
     }
@@ -1536,7 +1561,25 @@ public class Domain implements Debuggable {
                 }
                 toTabbedPane();
                 ControlProcess.put("featuresAndPrototypesSelected", true);
-
+                int dim = Util_Feature.getNumberOfFeaturesAfterSelection();
+                System.err.println("Got " + dim + " features after selection");
+                
+                for (int i = 0; i < selectedGenes.size(); i++) {
+                	System.out.println("\nDumping gene " + selectedGenes.get(i).myID);
+                    for (int j = 0, index = 0; j < _ligands.size(); j++) {
+                        if (getLigands().get(j).isChecked()) {
+                        	System.out.print("Ligand " + j + " has coordinates:");
+                            for (double x : selectedGenes.get(i).finalCoordinates[index]) {
+                            	System.out.print(" " + x);
+                            }
+                            index++;
+                        	System.out.println("");
+                        } else {
+                        	System.out.println("Ligand " + j + " was disabled");
+                        }
+                        
+                    }
+                }
                 int sign = JOptionPane.showConfirmDialog(null, "Do you have a priori genelist?", "priori genelist", JOptionPane.YES_NO_OPTION);
 
                 if (sign == 0) {
@@ -1960,6 +2003,10 @@ public class Domain implements Debuggable {
          * @param st
          */
         private void readTimes_new(StringTokenizer st) throws FileParseException {
+        	/* TODO: If the user only wants to use raw coordinates, we do not need time stamps. We abuse
+        	 * the number of time stamps (numTime) to mean the length of the raw coordinate vector.
+        	 * the actual t_i are irrelevant, so maybe we should not throw an error if they are missing.
+        	 */
             if (!st.hasMoreTokens()) throw parseError("Number of time stamps is not specified.");
             String s = st.nextToken();
             int numTime;

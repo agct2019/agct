@@ -62,27 +62,29 @@ public class Util_Feature implements Debuggable {
     }
 
     public static int getNumberOfFeaturesBeforeSelection(LigandList ligands, double[] times) {
-        int i, nfeatures = 0;
-
+        int enlig = 0;
+        for (Ligand ligand : ligands) {
+            if (ligand.isChecked() && ligand.isEnabled())
+                enlig++;
+        }
         if (AGCT.Method_F == 0) {
-            for (Ligand ligand : ligands) {
-                if (ligand.isChecked() && ligand.isEnabled())
-                    nfeatures++;
-            }
+        	// Slopes
+        	return enlig;
         } else if ((AGCT.Method_F >= 1) && (AGCT.Method_F <= 10)) {
-            for (i = 0; i < ligands.size(); i++)
-                if (ligands.get(i).isChecked() && ligands.get(i).isEnabled()) {
-                    if (AGCT.Number_Of_Wavelet_Stamps == -1)
-                        nfeatures += waveletsStampsAutomatic(times).length;
-                    else
-                        nfeatures += waveletsStampsUserFixed(times).length;
-                    if ((AGCT.Method_F == 1) && (AGCT.HAAR_WAVELETS_REMOVE_CONSTANT))
-                        nfeatures--;
-                }
-        } else
-            Matrix.perror("Gene :: Unauthorized Feature method");
-
-        return nfeatures;
+        	// Wavelets
+        	int nfeatures = enlig*(AGCT.Number_Of_Wavelet_Stamps == -1 ?
+        		waveletsStampsAutomatic(times).length : waveletsStampsUserFixed(times).length);
+            if ((AGCT.Method_F == 1) && (AGCT.HAAR_WAVELETS_REMOVE_CONSTANT)) {
+            	return nfeatures-enlig;
+            } else {
+            	return nfeatures;
+            }
+        } else if (AGCT.Method_F == 11) {
+        	// Raw coordinates
+        	return Domain.getInstance().getTimes().length * enlig;
+        }
+        Matrix.perror("Gene :: Unauthorized Feature method");
+        return -1;
     }
 
     /**

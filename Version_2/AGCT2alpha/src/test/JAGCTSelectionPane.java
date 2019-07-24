@@ -407,7 +407,7 @@ class JAGCTSelectionPane extends JPanel implements ActionListener, Debuggable {
     }
 
     public void checkEnabledNWC() {
-        if (featureMethod.getSelectedIndex() == 0)
+        if (featureMethod.getSelectedIndex() == 0 || featureMethod.getSelectedIndex() == 11)
             numberWabletCoefficients.setEnabled(false);
         else
             numberWabletCoefficients.setEnabled(true);

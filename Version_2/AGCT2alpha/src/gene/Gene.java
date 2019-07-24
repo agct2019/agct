@@ -359,8 +359,15 @@ public class Gene implements Debuggable, Comparable<Gene> {
     public void addUndeterminedCoordinate(boolean[] vals) {
         undeterminedCoordinates.add(vals);
     }
-
     public boolean[] getUndeterminedCoordinate(int id) {
+        /* This function always returns an array of false. Try this:
+    	for (boolean b : undeterminedCoordinates.get(id)) {
+    		if (b) {
+            	System.err.println("UndeterminedCoordinate wasn't false.");
+            	System.exit(1);
+    		}
+    	}
+    	*/
         return undeterminedCoordinates.get(id);
     }
 
@@ -1104,17 +1111,12 @@ public class Gene implements Debuggable, Comparable<Gene> {
         // boolean[][] uc2 = new boolean[ligands.numberOfSelectedLigands()][];
 
         // int index = 0;
-        for (int i = 0, index = 0; i < myDomain.getLigands().size(); i++) {
+        for (int i = 0; i < myDomain.getLigands().size(); i++) {
             if (myDomain.getLigands().get(i).isChecked()) {
                 // rc2[index] = new double[myDomain.times.length];
                 // uc2[index] = new boolean[myDomain.times.length];
                 newRawCoordinates.add(getRawCoordinate(i));
                 newUndeterminedCoordinates.add(getUndeterminedCoordinate(i));
-                // for (j = 0; j < myDomain.times.length; j++)
-                // rc2[index][j] = getRawCoordinate(i)[j];
-                // uc2[index][j] = getUndeterminedCoordinate(i)[j];
-                // }
-                index++;
             }
         }
 
@@ -1247,19 +1249,10 @@ public class Gene implements Debuggable, Comparable<Gene> {
     }
 
     public boolean isEligible() {
-        // returns true iff
-        if (AGCT.Method_F == 0) {
-            // slopes
-            return geneExpressionContainsEmptyData(2);
-        } else if ((AGCT.Method_F >= 1) && (AGCT.Method_F <= 10)) {
-            // Haar wavelets MINUS the constant coefficient
-            // (does not represent a variation of the curve)
-            // OR Daubechies interval DX(i), with all coefficients
-
-            return geneExpressionContainsEmptyData(2);
-        }
-        Matrix.perror("Feature method invalid");
-        return true;
+    	if (AGCT.Method_F < 0 || AGCT.Method_F > 11) {
+    		Matrix.perror("Feature method invalid");
+    	}
+        return geneExpressionContainsEmptyData(2);
     }
 
     public boolean geneExpressionContainsEmptyData(int n) {

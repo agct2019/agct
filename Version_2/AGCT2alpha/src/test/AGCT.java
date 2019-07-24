@@ -93,7 +93,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
     public static final String MS = "MS", MF = "MF", MW = "MW", MN = "MN";
     public static final String[] Feature_Method = {"Slopes", "Haar_Wavelets", "Daubechies_D4_Wavelets_Interval", "Daubechies_D4_Wavelets", "Daubechies_D8_Wavelets",
             "Daubechies_D10_Wavelets", "Daubechies_D12_Wavelets", "Daubechies_D14_Wavelets", "Daubechies_D16_Wavelets", "Daubechies_D18_Wavelets",
-            "Daubechies_D20_Wavelets"};
+            "Daubechies_D20_Wavelets", "Raw coordinates"};
     public static final String[] Feature_Selection_Method = {"None", "K_Smallest_Average_Determination_Coefficient"};
     public static int Number_Of_Clusters, Number_Of_Neighbors = 10, WindowWidth = 800;
     public static int Method_F = 0;
@@ -103,7 +103,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
      * Daubechies & Vial, // 1993) // 3 : use Daubechies D4 // 4 : use
      * Daubechies D8 // 5 : use Daubechies D10 // 6 : use Daubechies D12 // 7 :
      * use Daubechies D14 // 8 : use Daubechies D16 // 9 : use Daubechies D18 //
-     * 10 : use Daubechies D20
+     * 10 : use Daubechies D20 // 11 : raw coordinates
      */
     public static int Method_FS = 0;
     /**
@@ -322,7 +322,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
      * items and alike that appear on the menus
      */
     JCheckBoxMenuItem useDebug, useWarning, sortDepth, useShadow, perspective, highLightGene, onlyReferencedEdges, noGeneSelection;
-    JRadioButtonMenuItem methodF_0, methodF_1, methodF_2, methodF_3, methodF_4, methodF_5, methodF_6, methodF_7, methodF_8, methodF_9, methodF_10, methodS_0, methodS_1,
+    JRadioButtonMenuItem methodF_0, methodF_1, methodF_2, methodF_3, methodF_4, methodF_5, methodF_6, methodF_7, methodF_8, methodF_9, methodF_10, methodF_11, methodS_0, methodS_1,
             methodS_2, methodW_0, methodW_1, methodW_2, methodN_0, methodN_1, methodN_2, methodN_3;
     JMenuItem numberOfNeighbors, numberOfManifoldComponents, numberOfTriangulationDimensions, tHeatKernel, tHeatKernelSimilarityNeighbors, sparsifyStatistic, limitp,
             bregDiv, limitpdelaunay, limitpmagnitude, numberOfProfiles, loadHighlightFile, randomSeed;
@@ -561,13 +561,15 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
             methodF_9.setSelected(true);
         } else if (v == 10) {
             methodF_10.setSelected(true);
+        } else if (v == 11) {
+            methodF_11.setSelected(true);
         }
         AGCT.setMethod_F(v);
     }
 
     public void requestMofificationMethod_F() {
         if (!(methodF_0.isSelected() || methodF_1.isSelected() || methodF_2.isSelected() || methodF_3.isSelected() || methodF_4.isSelected() || methodF_5.isSelected()
-                || methodF_6.isSelected() || methodF_7.isSelected() || methodF_8.isSelected() || methodF_9.isSelected() || methodF_10.isSelected())) {
+                || methodF_6.isSelected() || methodF_7.isSelected() || methodF_8.isSelected() || methodF_9.isSelected() || methodF_10.isSelected() || methodF_11.isSelected())) {
             Matrix.perror("No radio button for Features selected");
         }
         if (methodF_0.isSelected()) {
@@ -602,6 +604,9 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
         }
         if (methodF_10.isSelected()) {
             AGCT.setMethod_F(10);
+        }
+        if (methodF_11.isSelected()) {
+            AGCT.setMethod_F(11);
         }
 
         Scenario.add("AGCT_Modification_Method_F", AGCT.Method_F);
@@ -1534,6 +1539,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
         methodF_8.setSelected(false);
         methodF_9.setSelected(false);
         methodF_10.setSelected(false);
+        methodF_11.setSelected(false);
         methodS_0.setSelected(false);
         methodS_1.setSelected(true);
         methodS_2.setSelected(false);
@@ -1577,6 +1583,8 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
             val += "Daubechies D18 wavelets\n";
         } else if (Method_F == 10) {
             val += "Daubechies D20 wavelets\n";
+        } else if (Method_F == 11) {
+        	val += "Raw coordinates\n";
         }
 
         val += " Similarity measure: ";
@@ -1818,6 +1826,9 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
         methodF_10 = new JRadioButtonMenuItem("D20 wavelet coefficients");
         methodF_10.setActionCommand(AGCT.MF);
 
+        methodF_11 = new JRadioButtonMenuItem("Raw coordinates");
+        methodF_11.setActionCommand(AGCT.MF);
+
         final ButtonGroup groupF = new ButtonGroup();
         groupF.add(methodF_0);
         groupF.add(methodF_1);
@@ -1830,6 +1841,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
         groupF.add(methodF_8);
         groupF.add(methodF_9);
         groupF.add(methodF_10);
+        groupF.add(methodF_11);
 
         // meanMode_ArithmeticMean = new
         // JRadioButtonMenuItem("Arithmetic Mean");
@@ -1940,6 +1952,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
         subF.add(methodF_8);
         subF.add(methodF_9);
         subF.add(methodF_10);
+        subF.add(methodF_11);
 
         // JMenu meanMode = new JMenu("Mean Mode(set before loading file.)");
         // meanMode.add(meanMode_ArithmeticMean);
@@ -1974,6 +1987,7 @@ public class AGCT extends JApplet implements Runnable, Debuggable, ActionListene
         methodF_8.addActionListener(this);
         methodF_9.addActionListener(this);
         methodF_10.addActionListener(this);
+        methodF_11.addActionListener(this);
         // meanMode_ArithmeticMean.addActionListener(this);
         // meanMode_GeometricMean.addActionListener(this);
         methodS_0.addActionListener(this);
