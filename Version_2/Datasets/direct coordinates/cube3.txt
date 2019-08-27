@@ -1,0 +1,14 @@
+Species
+E (entity)	1	E1
+EG (entity groupping)	1	1
+T (time)	3	0	1 	2
+R (replicate)	1
+Data	8
+V_000	-1	-1	-1
+V_001	-1	-1	1
+V_010	-1	1	-1
+V_011	-1	1	1
+V_100	1	-1	-1
+V_101	1	-1	1
+V_110	1	1	-1
+V_111	1	1	1
